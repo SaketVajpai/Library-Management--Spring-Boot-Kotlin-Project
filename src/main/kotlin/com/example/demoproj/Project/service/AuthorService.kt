@@ -1,11 +1,11 @@
-package com.example.demoproj.Project.service
+package com.library.kindle.service
 
-import com.example.demoproj.Project.Repository.AuthorRepository
-import com.example.demoproj.Project.Repository.BookRepository
-import com.example.demoproj.Project.dto.AuthorDTO
-import com.example.demoproj.Project.entity.Book
-import com.example.demoproj.Project.mappers.AuthorMapper
-import com.example.demoproj.Project.mappers.impl.BookMapperImpl
+import com.library.kindle.data.AuthorDTO
+import com.library.kindle.data.Book
+import com.library.kindle.mappers.AuthorMapper
+import com.library.kindle.mapper.BookMapper
+import com.library.kindle.repository.AuthorRepository
+import com.library.kindle.repository.BookRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageImpl
@@ -28,7 +28,7 @@ class AuthorService(){
     private lateinit var authorMapper: AuthorMapper
 
     @Autowired(required = true)
-    private lateinit var bookMapper: BookMapperImpl
+    private lateinit var bookMapper: BookMapper
 
     fun deleteAuthor(id: Int) = authorRepository.deleteById(id)
 
